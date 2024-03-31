@@ -47,23 +47,23 @@ const start = async () => {
     return
   }
 
-  const cartRouter = express.Router()
+  const checkoutRouter = express.Router()
 
-  cartRouter.use(payload.authenticate)
+  checkoutRouter.use(payload.authenticate)
 
-  cartRouter.get('/', (req, res) => {
+  checkoutRouter.get('/', (req, res) => {
     const request = req as PayloadRequest
 
     if (!request.user)
-      return res.redirect('/sign-in?origin=cart')
+      return res.redirect('/sign-in?origin=checkout')
 
     const parsedUrl = parse(req.url, true)
     const { query } = parsedUrl
 
-    return nextApp.render(req, res, '/cart', query)
+    return nextApp.render(req, res, '/checkout', query)
   })
 
-  app.use('/cart', cartRouter)
+  app.use('/checkout', checkoutRouter)
 
   app.use(
     "/api/trpc",
