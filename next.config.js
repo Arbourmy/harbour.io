@@ -9,9 +9,10 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "https://arbour-io.onrender.com",
+				pathname: "**",
 			},
 		],
-	},
+	}
 };
 
 module.exports = nextConfig;
