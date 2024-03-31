@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import NavItem from "./NavItem";
 import { useOnClickOutside } from "@/hooks/use-on-click-outside";
 import { buttonVariants } from "./ui/button";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 const NavItems = () => {
@@ -56,9 +57,12 @@ const NavItems = () => {
 				<div className="relative flex items-center">
 					<Link
 						href='/consult'
-						className={buttonVariants({
-							variant: 'ghost',
-						})}>
+						className={cn(buttonVariants({
+							variant: 'default',
+						}),
+							// "bg-white border-2 border-blue-600 text-black hover:text-white"
+							"from-blue-400/95 to-blue-500/50 bg-gradient-to-r"
+						)}>
 						Consult us
 					</Link>
 				</div>
