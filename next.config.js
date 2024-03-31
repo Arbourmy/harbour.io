@@ -1,11 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
-		domains: [
-			'localhost',
-			'https://arbour-io.onrender.com'
+		remotePatterns: [
+		  {
+			hostname: "localhost",
+			pathname: "**",
+			protocol: "http",
+			port: "3000",
+		  },
+		  {
+			hostname: "https://arbour-io.onrender.com",
+			protocol: "https",
+		  }
 		],
-	},
+	  },
 };
 
 module.exports = nextConfig;
