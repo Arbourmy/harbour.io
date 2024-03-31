@@ -103,3 +103,31 @@
 .wallet-adapter-button-trigger {
   @apply !px-3 text-gray-700 h-10 hover:!bg-accent inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
 }
+
+.hero {
+	@apply min-h-full bg-cover;
+	background: linear-gradient(
+		0deg,
+		rgba(113, 205, 248, 0.3),
+		rgba(9, 121, 248, 0.3)
+		),
+		url(https://picsum.photos/id/1043/800/600);
+}
+
+.leaflet-container {
+	width: 100%;
+	height: 100vh;
+  }
+
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 0 !important;
+}
+
+.map-ui {
+	top: 40%;
+	left: 50%;
+	transform: translateX(-50%);
+}

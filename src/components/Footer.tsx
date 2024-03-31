@@ -36,7 +36,7 @@ const Footer = () => {
 
                 <div className='text-center relative mx-auto max-w-sm'>
                   <h3 className='font-semibold text-gray-900'>
-                    Become a seller
+                    Join us
                   </h3>
                   <p className='mt-2 text-sm text-muted-foreground'>
                     If you&apos;d like to sell high-quality
