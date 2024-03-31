@@ -12,20 +12,16 @@ const MobileNav = () => {
 
   const pathname = usePathname()
 
-  // whenever we click an item in the menu and navigate away, we want to close the menu
   useEffect(() => {
     setIsOpen(false)
   }, [pathname])
 
-  // when we click the path we are currently on, we still want the mobile menu to close,
-  // however we cant rely on the pathname for it because that won't change (we're already there)
   const closeOnCurrent = (href: string) => {
     if (pathname === href) {
       setIsOpen(false)
     }
   }
 
-  // remove second scrollbar when mobile menu is open
   useEffect(() => {
     if (isOpen)
       document.body.classList.add('overflow-hidden')
@@ -62,6 +58,16 @@ const MobileNav = () => {
 
             <div className='mt-2'>
               <ul>
+				<li className='space-y-2 px-4 pb-2 pt-10'>
+					<div className='flow-root'>
+						<Link
+						onClick={() => closeOnCurrent('/consult')}
+						href='/consult'
+						className='-m-2 block px-2 font-medium text-gray-900'>
+							Consult Us
+						</Link>
+					</div>
+				</li>
                 {PRODUCT_CATEGORIES.map((category) => (
                   <li
                     key={category.label}
