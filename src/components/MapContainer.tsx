@@ -1,16 +1,21 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Map, Marker } from 'pigeon-maps';
 import COORDS from '@/config';
 import { Button } from './ui/button';
 
 export function MapContainer() {
 	const [showPrompt, setShowPrompt] = useState(true);
+	const [isMounted, setIsMounted] = useState(false);
 
 	const hidePrompt = () => {
 		setShowPrompt(false);
 	};
+
+	useEffect(() => {
+		setIsMounted(true);
+	}, []);
 
 	return (
 		<div className='relative bg-cover bg-center bg-no-repeat' id="map">
@@ -24,7 +29,7 @@ export function MapContainer() {
 				</>
 			)}
 			<div className='pt-0'>
-				<Map height={window.innerHeight} defaultCenter={[3.1390, 101.6869]} defaultZoom={11}>
+				<Map height={ isMounted ? window.innerHeight: 500 } defaultCenter={[3.1390, 101.6869]} defaultZoom={11}>
 					{COORDS.map((coordinate, index) => (
 						<Marker key={index} width={50} anchor={coordinate as [number, number]} />
 					))}

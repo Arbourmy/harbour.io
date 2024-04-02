@@ -1,13 +1,22 @@
 "use client"
 
 import MapContainer from "@/components/MapContainer"
-import MaxWidthWrapper from "@/components/MaxWidthWrapper"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
+import { useRef } from "react"
 
 const Page = () => {
+
+	const mapRef = useRef<HTMLDivElement>(null);
+
+	const scrollToElement = () => {
+		const {current} = mapRef
+		if (current !== null){
+			current.scrollIntoView({behavior: "smooth"})
+		}
+	}
 	return (
 		<>
 
@@ -33,12 +42,12 @@ const Page = () => {
 
 						<div className="mt-8 flex flex-wrap gap-4 text-center">
 							<Link
-								href='#map'
+								href='#'
 								className={
 									cn(buttonVariants({
 									variant: 'default',
 									size: 'lg',
-								}), "w-full px-12 sm:w-auto")}>
+								}), "w-full px-12 sm:w-auto")} onClick={scrollToElement}>
 								Get Started
 							</Link>
 
@@ -53,7 +62,9 @@ const Page = () => {
 				</div>
 			</section>
 			{/* <MaxWidthWrapper className="mt-12"> */}
-			<MapContainer />
+			<div className="map" ref={mapRef}>
+				<MapContainer />
+			</div>
 			{/* </MaxWidthWrapper> */}
 		</>
 	)
