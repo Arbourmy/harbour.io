@@ -15,7 +15,7 @@ export const Orders: CollectionConfig = {
   admin: {
     useAsTitle: 'Your Orders',
     description:
-      'A summary of all your orders on Arbour.io .',
+      'A summary of all your orders on Harbour.io .',
   },
   access: {
     read: yourOwn,
@@ -32,9 +32,6 @@ export const Orders: CollectionConfig = {
         read: ({ req }) => req.user.role === 'admin',
         create: () => false,
         update: () => false,
-      },
-      admin: {
-        hidden: true,
       },
       required: true,
     },
@@ -54,8 +51,10 @@ export const Orders: CollectionConfig = {
     {
       name: 'user',
       type: 'relationship',
-      admin: {
-        hidden: true,
+	  access: {
+        read: ({ req }) => req.user.role === 'admin',
+        create: () => false,
+        update: () => false,
       },
       relationTo: 'users',
       required: true,

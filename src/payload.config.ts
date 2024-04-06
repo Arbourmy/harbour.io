@@ -9,6 +9,7 @@ import { Products } from './collections/Products/Products'
 import { Media } from './collections/Media'
 import { ProductFiles } from './collections/ProductFile'
 import { Orders } from './collections/Orders'
+import { Logo, Icon, Icon_svg } from './components/Logo'
 
 dotenv.config({
   path: path.resolve(__dirname, '../.env'),
@@ -17,7 +18,6 @@ dotenv.config({
 export default buildConfig({
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || '',
   collections: [Users, Products, Media, ProductFiles, Orders],
-  // collections: [Users],
   routes: {
     admin: '/dashboard',
   },
@@ -25,10 +25,16 @@ export default buildConfig({
     user: 'users',
     bundler: webpackBundler(),
     meta: {
-      titleSuffix: '- Arbour.io',
+      titleSuffix: '- Harbour.io',
       favicon: '/favicon.ico',
       ogImage: '/thumbnail.jpg',
     },
+	components: {
+		graphics: {
+		  Logo,
+		  Icon: Icon,
+		},
+	}
   },
   rateLimit: {
     max: 2000,

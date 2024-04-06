@@ -24,8 +24,8 @@ export function formatPrice(
 }
 
 export function constructMetadata({
-	title = 'Arbour.io',
-	description = 'Arbour.io - Your marketplace for high-quality medicine and food.',
+	title = 'Harbour.io',
+	description = 'Harbour.io - Your marketplace for high-quality medicine and food.',
 	image = '/thumbnail.png',
 	icons = '/favicon.ico',
 	noIndex = false,
@@ -53,10 +53,10 @@ export function constructMetadata({
 		title,
 		description,
 		images: [image],
-		creator: '@arbour_io',
+		creator: '@MY_safe_Harbour',
 	  },
 	  icons,
-	  metadataBase: new URL('https://arbour.io.railway.app'),
+	  metadataBase: new URL('https://arbour-io.onrender.com/'),
 	  ...(noIndex && {
 		robots: {
 		  index: false,

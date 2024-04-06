@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import MaxWidthWrapper from './MaxWidthWrapper'
 import { Icons } from './Icons'
+import { Icon_svg } from './Logo'
 import NavItems from './NavItems'
 import { buttonVariants } from './ui/button'
 import Cart from './Cart'
@@ -24,7 +25,7 @@ const Navbar = async () => {
 
               <div className='ml-4 flex lg:ml-0'>
                 <Link href='/'>
-                  <Icons.logo className='h-10 w-10' />
+                  <Icon_svg.logo className='h-10 w-10' />
                 </Link>
               </div>
 

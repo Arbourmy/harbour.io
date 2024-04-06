@@ -39,13 +39,7 @@ export default function Home() {
             <span className="text-blue-600">medicine and food</span>.
           </h1>
           <p className="mt-6 text-lg max-w-prose text-muted-foreground">
-            Welcome to Arbour.io ⚓ Every medicine and food product listed on
-            our platform goes through a rigorous quality assurance process to
-            ensure that you receive only the best. We believe in providing a
-            seamless and secure experience for both buyers and sellers, making
-            it easy to find and purchase the products you need. Join our
-            community today and discover a world of high-quality medicine and
-            food options.
+            Welcome to Harbour.io ⚓. A holistic preventive health platform that aims to change how healthcare is done. Instead of expensive hospital bills, pills after pills, and just generally feeling awful, we want to help you stop yourself from falling sick in the first place. We are looking to deliver end-to-end care, spanning telehealth consultations and diagnosis, to day-to-day monitoring of diets and exercise, to give you and your caregivers the insight you need to truly target your self-care.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
             <Link href="/products" className={buttonVariants()}>

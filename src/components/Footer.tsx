@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import MaxWidthWrapper from './MaxWidthWrapper'
 import { Icons } from './Icons'
 import Link from 'next/link'
+import { Icon, Icon_svg } from './Logo'
 
 const Footer = () => {
   const pathname = usePathname()
@@ -19,7 +20,8 @@ const Footer = () => {
           {pathsToMinimize.includes(pathname) ? null : (
             <div className='pb-8 pt-16'>
               <div className='flex justify-center'>
-                <Icons.logo className='h-12 w-auto' />
+                {/* <Icons.logo className='h-12 w-auto' /> */}
+				<Icon_svg.logo className='h-10 w-10' />
               </div>
             </div>
           )}
@@ -57,7 +59,7 @@ const Footer = () => {
         <div className='py-10 md:flex md:items-center md:justify-between'>
           <div className='text-center md:text-left'>
             <p className='text-sm text-muted-foreground'>
-              &copy; {new Date().getFullYear()} Arbour.io, All Rights
+              &copy; {new Date().getFullYear()} Harbour.io, All Rights
               Reserved.
             </p>
           </div>

@@ -108,9 +108,9 @@ const ThankYouPage = async ({
                         value === product.category
                     )?.label
 
-                    const downloadUrl = (
-                      product.product_files as ProductFile
-                    ).url as string
+                    // const downloadUrl = (
+                    //   product.product_files as ProductFile
+                    // ).url as string
 
                     const { image } = product.images[0]
 
