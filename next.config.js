@@ -9,7 +9,7 @@ const nextConfig = {
 			port: "3000",
 		  },
 		  {
-			hostname: "arbour-io.onrender.com",
+			hostname: "harbour-io.onrender.com",
 			protocol: "https",
 		  }
 		],
