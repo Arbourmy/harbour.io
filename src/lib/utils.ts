@@ -56,7 +56,7 @@ export function constructMetadata({
 		creator: '@MY_safe_Harbour',
 	  },
 	  icons,
-	  metadataBase: new URL('https://arbour-io.onrender.com/'),
+	  metadataBase: new URL('https://harbour-io.onrender.com/'),
 	  ...(noIndex && {
 		robots: {
 		  index: false,
